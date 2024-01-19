@@ -1,8 +1,122 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+*{
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+  text-decoration: none;
+  list-style: none;
 }
 
-a {
-  color: #00B7FF;
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 50px;
+  font: 14px "Arial", Helvetica, Arial, sans-serif;
+}
+
+.div_home_huesped-titulo {
+  text-align: center;
+  width: 70%;
+  font-size: 40px;
+  font-weight: 600;
+  margin-bottom: 50px;
+}
+
+.div_home_huesped-formulario {
+  display: flex;
+  justify-content: center;
+  width: 70%;
+}
+
+.div_home_huesped-formulario-campos {
+  width: 600px;
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin: 20px 0px;
+}
+
+.div_home_huesped-formulario-campos label {
+  font-size: 24px;
+  font-weight: 600;
+  font-style: italic;
+}
+
+.div_home_huesped-formulario-campos input, select, option {
+  width: 100%;
+  height: 50%;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+option {
+  font-size: 20px;
+  font-weight: 300;
+  font-style: italic;
+}
+
+.div_home_huesped-formulario-botones {
+  width: 600px;
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.div_home_huesped-formulario-remember {
+  display: flex;
+  justify-content: center;
+}
+
+.div_home_huesped-formulario-botones label {
+  font-size: 16px;
+  font-weight: 600;
+  
+}
+
+.div_home_huesped-formulario-botones input {
+  width: 20px;
+  height: 20px;
+  border-radius: 10px;
+  margin: 0px 15px;
+}
+
+.button-enviar {
+  font-size: 20px;
+  font-weight: 400;
+  width: 100px;
+  height: 30px;
+  border-radius: 5px;
+}
+
+.button-olvidar {
+  font-size: 20px;
+  font-weight: 400;
+  width: 200px;
+  height: 30px;
+  border-radius: 5px;
+  margin: 50px 0px;
+}
+
+.div_home_userLoged {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 70%;
+  margin: 100px auto;
+}
+
+.div_home_userLoged p {
+  text-align: center;
+  font-size: 60px;
+  font-weight: 600;
+  margin-bottom: 100px;
+}
+
+.div_home_userLoged a {
+  font-size: 36px;
+  font-weight: 400;
+  font-style: italic;
 }

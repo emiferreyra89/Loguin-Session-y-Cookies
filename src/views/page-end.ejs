@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title><%= title %></title>
+        <link rel='stylesheet' href='/stylesheets/style.css' />
+      </head>
+    <body>
+        
+    </body>
+    <% if (locals.usuario) {%>
+        <body style="background-color: <%= locals.usuario.color%>">
+          <div class="div_home_userLoged">
+            <p><%= locals.usuario.nombre %>, gracias por visitarnos...</p>
+            <a href="/">Volver al Home</a>
+            <a href="/logout"><button class="button-olvidar">Olvidar el color</button></a>
+          </div>
+        </body>      
+    <% } else {%>
+        <body>
+            <p>Tu sesion ha expirado...</p>
+            <a href="/">Volver al Home</a>
+        </body>
+        <% } %>
+</html>

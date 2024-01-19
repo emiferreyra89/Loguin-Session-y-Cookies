@@ -4,8 +4,64 @@
     <title><%= title %></title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
-  <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
+
+  <% if (locals.usuario) {%>
+  <body style="background-color: <%= locals.usuario.color%>">
+    <div class="div_home_userLoged">
+      <p>Hola <%= locals.usuario.nombre%>, 
+        elegiste el color: <%= locals.usuario.color%>, 
+        tu email es:  <%= locals.usuario.email%> 
+        y tienes  <%= locals.usuario.edad%> años.</p>
+        <a href="/end">Segui en la proxima pagina...</a>
+        <a href="/logout"><button class="button-olvidar">Olvidar el color</button></a>
+    </div>
   </body>
+    
+  <%} else {%>
+    <body>
+    <div class="div_home_huesped-titulo">
+      <p>Bienvenidos a nuestra pagina de pruebas, por favor completa el formulario y observa lo que sucede...</p>
+    </div>
+    <div class="div_home_huesped-formulario">
+      <form action="/" method="post">
+        <div class="div_home_huesped-formulario-campos">
+          <label for="nombre">Nombre</label>
+          <input type="text" name="nombre" id="nombre" value="<%= locals.oldData ? oldData.nombre : null %>">
+          <p style="color: red;"><%= locals.errors && errors.nombre ? errors.nombre.msg: null %></p>
+        </div>
+        <div class="div_home_huesped-formulario-campos">
+          <label for="color">Color</label>
+          <select name="color" id="color">
+            <option value="">Elegir un Color</option>
+            <option value="red"<%= locals.oldData && (oldData.color == 'red')? 'selected' : null %>>Rojo</option>
+            <option value="green"<%= locals.oldData && (oldData.color == 'green')? 'selected' : null %>>Verde</option>
+            <option value="blue"<%= locals.oldData && (oldData.color == 'blue')? 'selected' : null %>>Azul</option>
+            <option value="yellow"<%= locals.oldData && (oldData.color == 'yellow')? 'selected' : null %>>Amarillo</option>
+          </select>
+          <p style="color: red;"><%= locals.errors && errors.color ? errors.color.msg: null %></p>
+        </div>
+        <div class="div_home_huesped-formulario-campos">
+          <label for="email">E-mail</label>
+          <input type="email" name="email" id="email" value="<%= locals.oldData ? oldData.email : null %>">
+          <p style="color: red;"><%= locals.errors && errors.email ? errors.email.msg: null %></p>
+        </div>
+        <div class="div_home_huesped-formulario-campos">
+          <label for="edad">Edad</label>
+          <input type="text" name="edad" id="edad" value="<%= locals.oldData ? oldData.edad : null %>">
+          <p style="color: red;"><%= locals.errors && errors.edad ? errors.edad.msg: null %></p>
+        </div>
+        <div class="div_home_huesped-formulario-botones">
+          <div class="div_home_huesped-formulario-remember">
+            <label for="remember">Recordar color</label> 
+            <input type="checkbox" name="remember" id="remember">
+          </div>
+          <!-- <a href=""><button class="button-olvidar">Olvidar el color</button></a> -->
+          <button type="submit" class="button-enviar">Enviar</button>
+        </div>
+      </form>
+    </div>
+    
+  </body>
+  <% } %>
+  
 </html>
