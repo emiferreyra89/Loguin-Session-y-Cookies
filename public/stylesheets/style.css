@@ -120,3 +120,16 @@ option {
   font-weight: 400;
   font-style: italic;
 }
+
+.session_expirada {
+  text-align: center;
+  font-size: 60px;
+  font-weight: 600;
+  margin-bottom: 100px;
+}
+
+.volver_home {
+  font-size: 36px;
+  font-weight: 400;
+  font-style: italic;
+}

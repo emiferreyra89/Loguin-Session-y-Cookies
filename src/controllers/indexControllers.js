@@ -15,17 +15,16 @@ const indexControllers = {
 
         let user = req.body
         req.session.usuario = user
-        
+    
         if(user.remember){  
-            res.cookie('cookieUser', user, {maxAge:1000*60*5})
-            res.cookie('remember',user.remember,{maxAge:1000*60*5} )
+            res.cookie('cookieUser', user, {maxAge:1000*60})
+            res.cookie('remember',user.remember,{maxAge:1000*60} )
         }
         
         res.render('index', { title: 'Express', usuario: req.session.usuario });
       },
 
     pageEnd: function(req, res, next) {
-        console.log(req.session);
         res.render('page-end', { title: 'Fin', usuario: req.session.usuario });
     },
 
